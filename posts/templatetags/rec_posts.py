@@ -16,5 +16,5 @@ User = get_user_model()
 def rec_posts(user):
     if isinstance(user, User):
         posts = Post.objects.annotate(q_count=Count('likes'))\
-                    .order_by('-q_count')[:5]
+                    .order_by('-q_count')[:3]
         return {"posts": posts}

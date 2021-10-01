@@ -31,3 +31,11 @@ class UserRegisterForm(forms.Form):
         if User.objects.filter(email__icontains=email).exists():
             raise forms.ValidationError("This email is already registered")
         return email
+
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']

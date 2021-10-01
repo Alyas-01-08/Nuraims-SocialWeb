@@ -101,7 +101,7 @@ def LikeView(request, pk):
 
 
 class PostListView(LoginRequiredMixin, ListView):
-    paginate_by = 5
+    paginate_by = 8
     model = Post
 
     def get_queryset(self, *args, **kwargs):

@@ -1,16 +1,13 @@
-<div id="post-container">
-    <div class="card mb-2 " style="width: 13rem;">
-        <div class="card-body">
-        <p class="lead">Recommended tags</p>
-            {% for tag in top_tags %}
-                <a href="{% url "tags:detail" tag.slug %}">
-                    <h5 class="card-title">
-                        {{ tag }}
-                    </h5>
-                </a>
-            {% empty %}
-                <h4>No one</h4>
-            {% endfor %}
-        </div>
-    </div>
+
+<div class="after-post-tags">
+    <ul class="tags">
+        <li><h5 class="sitetitle">Popular Tags</h5></li>
+
+        {% for tag in top_tags %}
+            <li><a href="{% url "tags:detail" tag.slug %}">{{ tag }}</a></li>
+        {% empty %}
+
+        {% endfor %}
+
+    </ul>
 </div>

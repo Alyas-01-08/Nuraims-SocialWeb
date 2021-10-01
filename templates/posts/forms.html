@@ -4,5 +4,5 @@
       method="POST" action="{% if action_url %}{{ action_url }}{% endif %}">
     {% csrf_token %}
     {{ form|crispy }}
-    <input class="btn btn-primary m-2" type="submit" value="{{ btn_value }}">
+    <input class="btn btn-outline-success mt-2" type="submit" value="{{ btn_value }}">
 </form>

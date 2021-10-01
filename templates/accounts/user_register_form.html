@@ -7,16 +7,26 @@
 
 
 {% block content %}
-    <div class='row'>
-        <div class='col-sm-6 col-sm-offset-3'>
-            <h1>Register</h1>
-            <form class='form {% if form_class %}{{ form_class }}{% endif %}'
-                  method='POST'
-                  action="{% if action_url %}{{ action_url }}{% endif %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <input class='btn btn-primary' type="submit" value="Register"/>
-            </form>
+    <div class="container">
+	<div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="mainheading">
+                <h1>Register</h1>
+                <form class='form {% if form_class %}{{ form_class }}{% endif %}'
+                      method='POST'
+                      action="{% if action_url %}{{ action_url }}{% endif %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input class='btn btn-primary' type="submit" value="Register"/>
+                </form>
+
+            </div>
         </div>
     </div>
+    </div>
+{#    <div class='row'>#}
+{#        <div class='col-sm-6 col-sm-offset-3'>#}
+{#            #}
+{#        </div>#}
+{#    </div>#}
 {% endblock content %}
