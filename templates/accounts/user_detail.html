@@ -126,8 +126,8 @@
         <div class="card">
             <div class="row">
                 <div class="col-md-5 wrapthumbnail">
-                    <a href="post.html">
-                        <div class="thumbnail" style="background-image:url({% static 'img/demopic/1.jpg' %});">
+                    <a href="{{ object.get_absolute_url }}">
+                        <div class="thumbnail" style="background-image:url({{ object.image.url }});">
                         </div>
                     </a>
                 </div>
