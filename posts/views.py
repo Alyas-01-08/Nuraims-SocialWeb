@@ -26,7 +26,6 @@ class PostCreateView(FormUserMixin, CreateView):
         form.instance.user = user
         valid_data = super(PostCreateView, self).form_valid(form)
         tags = form.cleaned_data.get("tags")
-        country = form.cleaned_data.get("countries")
         if tags:
             tags_list = tags.split(',')
             for tag in tags_list:
@@ -51,10 +50,8 @@ class PostUpdateView(LoginRequiredMixin, UserOwnerMixin, UpdateView):
     def form_valid(self, form):
         valid_data = super(PostUpdateView, self).form_valid(form)
         tags = form.cleaned_data.get("tags")
-        country = form.cleaned_data.get("countries")
         obj = self.get_object()
         obj.tag_set.clear()
-        obj.country_set.clear()
         if tags:
             tags_list = tags.split(',')
             for tag in tags_list:

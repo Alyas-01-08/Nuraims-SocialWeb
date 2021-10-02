@@ -17,6 +17,7 @@ class ProductManager(models.Manager):
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=2000)
+    image = models.ImageField(default='default.jpg', upload_to='post_image/')
     update = models.DateTimeField(auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='blog_posts')

@@ -5,11 +5,10 @@ from .models import Post
 
 class PostModelForm(forms.ModelForm):
     tags = forms.CharField(label='tag', required=False)
+
     class Meta:
         model = Post
-        fields = [
-            "title",
-        ]
+        fields = ["title", "image"]
 
     def clean_title(self):
         title = self.cleaned_data.get("title")
